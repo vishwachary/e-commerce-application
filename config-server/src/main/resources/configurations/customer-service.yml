@@ -3,13 +3,13 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5000/ecomdb
+    url: jdbc:postgresql://localhost:5432/ecomdb
     username: admin_ecom_user
     password: password
     driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
-      ddl-auto: validate   # or update / none
-    show-sql: true
+      ddl-auto: validate
+    database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
