@@ -42,6 +42,11 @@
           </node>
         </introspection-scope>
       </choose-schema-mapping>
+      <use-database negative="1" kind="database" qname="ecomdb" operator="@">
+        <node kind="schema">
+          <name qname="public" />
+        </node>
+      </use-database>
       <url>jdbc:postgresql://localhost:5000/ecomdb</url>
       <remarks />
       <vm-options>-Duser.timezone=Asia/Kolkata</vm-options>

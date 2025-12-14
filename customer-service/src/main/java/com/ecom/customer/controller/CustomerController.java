@@ -22,6 +22,11 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
+    @GetMapping("/welcome/{name}")
+    public String welcome(@PathVariable String name) {
+        return "welcome " + "  " +name + "to customer service";
+    }
+
     @GetMapping
     public ResponseEntity<List<CustomerResponse>> findAll() {
         return ResponseEntity.ok(customerService.findAllCustomers());
