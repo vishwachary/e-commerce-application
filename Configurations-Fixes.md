@@ -1,10 +1,24 @@
 from Config-server each service properties can be viewed as
 
 http://localhost:8888/actuator/health
+
+http://localhost:8888/discovery-service/default
+
+http://localhost:8888/customer-service/default
+
+
+
+customer-service health end point
+http://localhost:8090/actuator/health
+
+
+from Config-server each service properties can be viewed as
+
+http://localhost:8888/actuator/health
 http://localhost:8888/discovery-service/default
 http://localhost:8888/customer-service/default
 
-for every service having ENV varibales for docker compose fixed most issues
+for every service having ENV variables for docker compose fixed most issues
 
 SPRING_CLOUD_CONFIG_FAILFAST=false;
 SPRING_CONFIG_IMPORT=optional:configserver:http://config-server:8888;
