@@ -3,10 +3,9 @@ package com.ecom.customer.controller;
 
 import com.ecom.customer.dto.CustomerRequest;
 import com.ecom.customer.dto.CustomerResponse;
-import com.ecom.customer.entity.Customer;
 import com.ecom.customer.service.CustomerService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,12 +26,14 @@ public class CustomerController {
         return "welcome " + "  " +name + "to customer service";
     }
 
-    @GetMapping
+    @GetMapping("/customers")
+    @Operation(summary = "Get all customers")
     public ResponseEntity<List<CustomerResponse>> findAll() {
         return ResponseEntity.ok(customerService.findAllCustomers());
     }
 
     @PostMapping("/customers")
+    @Operation(summary = "create new customer")
     public ResponseEntity<CustomerResponse> createCustomer(@Valid @RequestBody CustomerRequest customerRequest) {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(customerService.createCustomer(customerRequest));

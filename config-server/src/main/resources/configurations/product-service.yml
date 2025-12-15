@@ -1,6 +1,7 @@
 server:
-  port: 8090
+  port: 8091
   address: 0.0.0.0
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/ecomdb

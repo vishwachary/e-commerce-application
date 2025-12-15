@@ -19,7 +19,7 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String email;
-    @OneToOne
+    @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private Address address;
 }

@@ -11,7 +11,7 @@ RUN mvn clean package -DskipTests
 FROM eclipse-temurin:17-jdk AS runner
 
 WORKDIR /app
-COPY --from=builder /app/target/customer-service-0.0.1-SNAPSHOT.jar ./customer-service.jar
+COPY --from=builder /app/target/gateway-service-0.0.1-SNAPSHOT.jar ./gateway-service.jar
 
-EXPOSE 8090
-ENTRYPOINT ["java", "-jar", "customer-service.jar"]
+EXPOSE 8222
+ENTRYPOINT ["java", "-jar", "gateway-service.jar"]
