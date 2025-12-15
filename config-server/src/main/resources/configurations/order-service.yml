@@ -1,0 +1,16 @@
+server:
+  port: 8092
+  address: 0.0.0.0
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecomdb
+    username: admin_ecom_user
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
